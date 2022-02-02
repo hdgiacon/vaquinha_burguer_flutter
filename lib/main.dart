@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:vaquinha_burguer/app/core/bindings/application_binding.dart';
 import 'package:vaquinha_burguer/app/core/ui/vakinha_ui.dart';
 import 'package:vaquinha_burguer/app/modules/routes/auth_routers.dart';
 import 'package:vaquinha_burguer/app/modules/routes/splash_routers.dart';
@@ -17,6 +18,7 @@ class VakinhaBurguerMainApp extends StatelessWidget {
       title: "Vakinha Burguer",
       debugShowCheckedModeBanner: false,
       theme: VakinhaUi.theme,
+      initialBinding: ApplicationBinding(),
       getPages: [
         ...SplashRouters.routers,
         ...AuthRouters.routers
