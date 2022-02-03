@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vaquinha_burguer/app/core/ui/widgets/vakinha_button.dart';
+import 'package:vaquinha_burguer/app/modules/splash/splash_controller.dart';
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends GetView<SplashController> {
   const SplashPage({ Key? key }) : super(key: key);
 
   @override
@@ -37,9 +38,7 @@ class SplashPage extends StatelessWidget {
                     label: 'ACESSAR', 
                     width: context.widthTransformer(reducedBy: 40.0),
                     height: 35.0,
-                    onPressed: (){
-                      Get.toNamed('/auth/login');
-                    }
+                    onPressed: () => controller.checkLogged()
                   )
                 ]
               )
