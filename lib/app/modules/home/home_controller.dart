@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vaquinha_burguer/app/core/services/auth_service.dart';
+import 'package:vaquinha_burguer/app/core/services/shopping_card_service.dart';
 import 'package:vaquinha_burguer/app/modules/menu/menu_page.dart';
 import 'package:vaquinha_burguer/app/modules/menu/menu_bindings.dart';
 
 class HomeController extends GetxController {  
   static const NAVIGATOR_KEY = 1;
+  final ShoppingCardService _shoppingCardService;
 
   final _tabIndex = 0.obs;
   final _tabs = [
@@ -14,7 +16,13 @@ class HomeController extends GetxController {
     '/exit'
   ];
 
+  HomeController(
+    {required ShoppingCardService shoppingCardService}
+  ) : _shoppingCardService = shoppingCardService;
+
   int get tabIndex => _tabIndex.value;
+
+  int get totalProductsInShoppingCard => _shoppingCardService.totalProducts;
 
   set tabIndex(int index){
     _tabIndex(index);

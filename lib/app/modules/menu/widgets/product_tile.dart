@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vaquinha_burguer/app/core/ui/formatter_helper.dart';
 import 'package:vaquinha_burguer/app/core/ui/vakinha_ui.dart';
 import 'package:vaquinha_burguer/app/models/product_model.dart';
+import 'package:get/get.dart';
 
 class ProductTile extends StatelessWidget {
 
@@ -57,7 +58,9 @@ class ProductTile extends StatelessWidget {
           ]
         )
       ),
-      onTap: (){}
+      onTap: (){
+        Get.toNamed('/product_detail', arguments: product);
+      }
     );
   }
 }
