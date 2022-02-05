@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:vaquinha_burguer/app/core/bindings/application_binding.dart';
 import 'package:vaquinha_burguer/app/core/ui/vakinha_ui.dart';
+import 'package:vaquinha_burguer/app/routes/orders_routers.dart';
 import 'package:vaquinha_burguer/app/routes/product_routers.dart';
 import 'app/routes/auth_routers.dart';
 import 'app/routes/home_routers.dart';
@@ -27,7 +28,8 @@ class VakinhaBurguerMainApp extends StatelessWidget {
         ...SplashRouters.routers,
         ...AuthRouters.routers,
         ...HomeRouters.routers,
-        ...ProductRouters.routers
+        ...ProductRouters.routers,
+        ...OrdersRouters.routers
       ]
     );
   }
